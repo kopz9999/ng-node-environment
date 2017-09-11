@@ -1,0 +1,23 @@
+{
+  "name": "ng-node-environment",
+  "version": "1.0.0",
+  "description": "Load process.env variables into Angular 2-4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kopz9999/ng-node-environment.git"
+  },
+  "keywords": [
+    "node",
+    "angular"
+  ],
+  "author": "Luis Canales",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kopz9999/ng-node-environment/issues"
+  },
+  "homepage": "https://github.com/kopz9999/ng-node-environment#readme"
+}
