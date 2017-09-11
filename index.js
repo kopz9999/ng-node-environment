@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#! /usr/local/bin/node
 
 require('dotenv').config();
 var camelize = require('camelize');
