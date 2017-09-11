@@ -1,6 +1,6 @@
 {
   "name": "ng-node-environment",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Load process.env variables into Angular 2-4",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/kopz9999/ng-node-environment/issues"
   },
-  "homepage": "https://github.com/kopz9999/ng-node-environment#readme"
+  "homepage": "https://github.com/kopz9999/ng-node-environment#readme",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "camelize": "^1.0.0",
+    "dotenv": "^4.0.0"
+  },
+  "bin": {
+    "node-env-to-ng": "index.js"
+  }
 }
