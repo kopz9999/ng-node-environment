@@ -7,7 +7,7 @@ var path = require('path');
 var appRoot = require('app-root-path');
 var environmentPath = path.join(appRoot.toString(), 'environment.json');
 var tsEnvironmentPath = path.join(appRoot.toString(), 'src', 'environments', 'base.ts');
-var currentValue, environmentBase, tsString;
+var currentValue, environmentProperty, environmentBase, tsString, booleanValue;
 
 console.log('Reading base environment: ' + environmentPath);
 
@@ -20,7 +20,13 @@ if (fs.existsSync(environmentPath)) {
 Object.keys(process.env).forEach(function (key) {
   if (key.startsWith('NG_')) {
     currentValue = process.env[key];
-    environmentBase[camelize(key.substr(3).toLowerCase())] = currentValue;
+    booleanValue = currentValue.toLowerCase();
+    environmentProperty = camelize(key.substr(3).toLowerCase());
+    if (booleanValue === 'true' || booleanValue === 'false') {
+      environmentBase[environmentProperty] = booleanValue === 'true';
+    } else {
+      environmentBase[environmentProperty] = currentValue;
+    }
   }
 });
 
