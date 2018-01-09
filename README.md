@@ -73,6 +73,17 @@ export const environment = {
 };
 ```
 
+In case you got troubles due to constants on `app.module.ts`, you can take the exported constant variable:
+
+```typescript
+import { sharedEnvironment } from './base';
+
+export const environment = {
+  ...sharedEnvironment,
+  production: false,
+};
+```
+
 And ignore **base.ts** on **.gitignore**
 
 ```text

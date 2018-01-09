@@ -1,6 +1,6 @@
 {
   "name": "ng-node-environment",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Load process.env variables into Angular 2-4",
   "main": "index.js",
   "scripts": {

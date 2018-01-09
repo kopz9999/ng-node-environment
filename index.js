@@ -30,7 +30,7 @@ Object.keys(process.env).forEach(function (key) {
   }
 });
 
-tsString = "export default " + JSON.stringify(environmentBase, null, '  ');
+tsString = "export const sharedEnvironment = " + JSON.stringify(environmentBase, null, '  ') + "\n\nexport default sharedEnvironment;";
 
 console.log('Writing variables from process.env: ' + tsEnvironmentPath);
 
