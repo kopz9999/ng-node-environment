@@ -1,6 +1,6 @@
 {
   "name": "ng-node-environment",
-  "version": "1.0.9",
+  "version": "1.1.0-rc1",
   "description": "Load process.env variables into Angular 2-4",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "dependencies": {
     "app-root-path": "^2.0.1",
     "camelize": "^1.0.0",
+    "command-line-args": "^5.0.2",
     "dotenv": "^4.0.0"
   },
   "bin": {

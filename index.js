@@ -1,21 +1,29 @@
 #! /usr/local/bin/node
 
-require('dotenv').config();
+var commandLineArgs = require('command-line-args');
 var camelize = require('camelize');
 var fs = require('fs');
 var path = require('path');
 var appRoot = require('app-root-path');
-var environmentPath = path.join(appRoot.toString(), 'environment.json');
-var tsEnvironmentPath = path.join(appRoot.toString(), 'src', 'environments', 'base.ts');
 var currentValue, environmentProperty, environmentBase, tsString, booleanValue;
 
-console.log('Reading base environment: ' + environmentPath);
+var optionDefinitions = [
+  { name: 'out', alias: 'o', type: String },
+  { name: 'in', alias: 'i', type: String },
+];
+
+var options = commandLineArgs(optionDefinitions);
+var environmentPath = options['in'] || path.join(appRoot.toString(), 'environment.json');;
+var tsEnvironmentPath = options['out'] || path.join(appRoot.toString(), 'src', 'environments', 'base.ts')
 
 if (fs.existsSync(environmentPath)) {
+  console.log('Reading base environment: ' + environmentPath);
   environmentBase = JSON.parse(fs.readFileSync(environmentPath, 'utf-8').toString());
 } else {
   environmentBase = {};
 }
+
+require('dotenv').config();
 
 Object.keys(process.env).forEach(function (key) {
   if (key.startsWith('NG_')) {

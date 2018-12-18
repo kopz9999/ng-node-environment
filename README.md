@@ -1,3 +1,5 @@
+# NgNodeEnvironment
+
 ## Synopsis
 
 Load process.env variables into Angular 2-4
@@ -75,6 +77,8 @@ export const environment = {
 
 In case you got troubles due to constants on `app.module.ts`, you can take the exported constant variable:
 
+> NOTE: the brackets on `{sharedEnvironment}` are required to avoid aot issues.
+
 ```typescript
 import { sharedEnvironment } from './base';
 
@@ -90,6 +94,43 @@ And ignore **base.ts** on **.gitignore**
 # Environment variables
 src/environments/base.ts
 .env
+```
+
+## Local environments
+
+### DotEnv
+
+A local `.env` file can be provided to load environment variables from file
+
+### Multiple environments with JSON
+
+**NgNodeEnvironment** supports multiple environments for local development.
+By default, a file named `environment.json` in the root folder of the app will be taken.
+
+This default behaviour can be changed through the `--in` option. 
+The following will read the file `./envs/default.json` and will write it into 
+`./src/environments/base.ts`.
+
+```
+$ node ./node_modules/ng-node-environment/index.js --in="./envs/default.json"
+```
+
+The out file `base.ts` can be overridden with the `--out` option. 
+The following will read the file `./envs/staging.json` and will write it into 
+`./src/environments/staging.out.ts`.
+
+```
+$ node ./node_modules/ng-node-environment/index.js --in="./envs/staging.json" --out="./src/environments/staging.out.ts"
+```
+
+Multiple environments on `package.json`
+
+```json
+{
+    "ng-node-environment": "node ./node_modules/ng-node-environment/index.js",
+    "staging-env": "npm run ng-node-environment -- --in=\"./envs/staging.json\" --out=\"./src/environments/staging.out.ts\"",
+    "prod-env": "npm run ng-node-environment -- --in=\"./envs/prod.json\" --out=\"./src/environments/prod.out.ts\""
+}
 ```
 
 ## Motivation
