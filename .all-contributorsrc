@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Ferrzo",
+      "name": "Ferrzo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4921788?v=4",
+      "profile": "https://github.com/Ferrzo",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ng-node-environment",
+  "projectOwner": "kopz9999",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
