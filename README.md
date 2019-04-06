@@ -133,6 +133,16 @@ Multiple environments on `package.json`
 }
 ```
 
+## Testing
+
+If there's any modification to be added to this package, please test with a sample running:
+
+```bash
+$ node index.js --in=./test_configs/test-config.json --out=./test_configs/test-config.out.ts
+```
+
+Just to make sure it is still working!
+
 ## Motivation
 
 Well, I don't like to have environment variables on version control because

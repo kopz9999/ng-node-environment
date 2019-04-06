@@ -9,3 +9,5 @@
 *.launch
 .settings/
 *.sublime-workspace
+
+test_configs
